@@ -3,12 +3,12 @@
 using namespace std;
 
 int main() {
-    string name, surname, film;
+    string name, surname, book;
     cout << "Enter your name and surname, please\n";
     cin >> name >> surname;
-    cout << "Enter your favourite film name, please\n";
-    getline(cin, film);
-    getline(cin, film);
+    cout << "Enter your favourite book name, please\n";
+    getline(cin, book);
+    getline(cin, book);
     freopen("ans.txt", "a", stdout);
-    cout << name + " " + surname + ": " + film + ".\n";
+    cout << name + " " + surname + ": " + book + ".\n";
 }
