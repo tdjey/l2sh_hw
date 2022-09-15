@@ -1,6 +1,18 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
+
+void print_results() {
+    ifstream input;
+    input.open("answers.txt");
+    string user_info;
+    while (!input.eof()) {
+        getline(input, user_info);
+        cout << user_info << "\n";
+    }
+    input.close();
+}
 
 int main() {
     string name, surname, book;
@@ -9,6 +21,8 @@ int main() {
     cout << "Enter your favourite book name, please\n";
     getline(cin, book);
     getline(cin, book);
-    freopen("ans.txt", "a", stdout);
-    cout << name + " " + surname + ": " + book + ".\n";
+    ofstream output;
+    output.open("answers.txt", ofstream::app);
+    output << name + " " + surname + ": " + book + ".\n";
+    output.close();
 }
