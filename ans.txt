@@ -1,0 +1,291 @@
+dir_path>git checkout -b feature/results
+Switched to a new branch 'feature/results'
+
+dir_path>git add *
+
+dir_path>git commit -m "print function added"
+[feature/results 7c9910d] print function added
+ 1 file changed, 16 insertions(+), 2 deletions(-)
+
+dir_path>git checkout master
+Switched to branch 'master'
+
+dir_path>git checkout -b feature/inputfile
+Switched to a new branch 'feature/inputfile'
+
+dir_path>git add *
+
+dir_path>git status
+On branch feature/inputfile
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   main.cpp
+
+
+dir_path>git branch
+* feature/inputfile
+  feature/results
+  master
+
+dir_path>git log --all --decorate  --graph
+* commit 7c9910dca3f375102a9abc11a4013c0050cfd43f (feature/results)
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 11:33:45 2022 +0300
+|
+|     print function added
+|
+* commit 2cfc839a17e5c14b16b7f037b7282d49b403fa70 (HEAD -> feature/inputfile, master)
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 01:50:52 2022 +0300
+|
+|     .gitignore added
+|
+* commit 512095f0c0b5c56504879ca90c1ee4b82c012093
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 01:49:55 2022 +0300
+|
+|     readme fixed
+|
+* commit 0edcdd92a962acff25f0a7fac51e1d8cf7783791
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 01:49:03 2022 +0300
+|
+|     film is replaced by book
+|
+* commit 3220cce07d88bc52e0f7ce52cc19145071e101fa (tag: v1)
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 01:40:46 2022 +0300
+|
+|     readme added
+
+dir_path>git add *
+
+dir_path>git commit -m "questions file added and main.cpp updated"
+[feature/inputfile 579a218] questions file added and main.cpp updated
+ 2 files changed, 30 insertions(+), 14 deletions(-)
+ rewrite main.cpp (62%)
+ create mode 100644 questions.txt
+
+dir_path>git log --all --decorate  --graph
+* commit 579a218ee8ccea65d8559659523196518d7e9cf7 (HEAD -> feature/inputfile)
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 12:07:58 2022 +0300
+|
+|     questions file added and main.cpp updated
+|
+| * commit 7c9910dca3f375102a9abc11a4013c0050cfd43f (feature/results)
+|/  Author: tdjey <shfartem@mail.ru>
+|   Date:   Thu Sep 15 11:33:45 2022 +0300
+|
+|       print function added
+|
+* commit 2cfc839a17e5c14b16b7f037b7282d49b403fa70 (master)
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 01:50:52 2022 +0300
+|
+|     .gitignore added
+|
+* commit 512095f0c0b5c56504879ca90c1ee4b82c012093
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 01:49:55 2022 +0300
+|
+|     readme fixed
+|
+* commit 0edcdd92a962acff25f0a7fac51e1d8cf7783791
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 01:49:03 2022 +0300
+|
+|     film is replaced by book
+
+dir_path>git checkout master
+Switched to branch 'master'
+
+dir_path>git merge feature/inputfile
+Updating 2cfc839..579a218
+Fast-forward
+ main.cpp      | 28 ++++++++++++++++++++++------
+ questions.txt |  0
+ 2 files changed, 22 insertions(+), 6 deletions(-)
+ create mode 100644 questions.txt
+
+dir_path>git log --all --decorate  --graph
+* commit 579a218ee8ccea65d8559659523196518d7e9cf7 (HEAD -> master, feature/inputfile)
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 12:07:58 2022 +0300
+|
+|     questions file added and main.cpp updated
+|
+| * commit 7c9910dca3f375102a9abc11a4013c0050cfd43f (feature/results)
+|/  Author: tdjey <shfartem@mail.ru>
+|   Date:   Thu Sep 15 11:33:45 2022 +0300
+|
+|       print function added
+|
+* commit 2cfc839a17e5c14b16b7f037b7282d49b403fa70
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 01:50:52 2022 +0300
+|
+|     .gitignore added
+|
+* commit 512095f0c0b5c56504879ca90c1ee4b82c012093
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 01:49:55 2022 +0300
+|
+|     readme fixed
+|
+* commit 0edcdd92a962acff25f0a7fac51e1d8cf7783791
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 01:49:03 2022 +0300
+|
+|     film is replaced by book
+
+dir_path>git branch
+  feature/inputfile
+  feature/results
+* master
+
+dir_path>git log
+commit 579a218ee8ccea65d8559659523196518d7e9cf7 (HEAD -> master, feature/inputfile)
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 12:07:58 2022 +0300
+
+    questions file added and main.cpp updated
+
+commit 2cfc839a17e5c14b16b7f037b7282d49b403fa70
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 01:50:52 2022 +0300
+
+    .gitignore added
+
+commit 512095f0c0b5c56504879ca90c1ee4b82c012093
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 01:49:55 2022 +0300
+
+    readme fixed
+
+commit 0edcdd92a962acff25f0a7fac51e1d8cf7783791
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 01:49:03 2022 +0300
+
+    film is replaced by book
+
+commit 3220cce07d88bc52e0f7ce52cc19145071e101fa (tag: v1)
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 01:40:46 2022 +0300
+
+    readme added
+
+dir_path>git checkout feature/results
+Switched to branch 'feature/results'
+
+dir_path>git add *
+
+dir_path>git status
+On branch feature/results
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   main.cpp
+
+
+dir_path>git commit -m "variations added"
+[feature/results d651f68] variations added
+ 1 file changed, 22 insertions(+), 10 deletions(-)
+
+dir_path>git checkout master
+Switched to branch 'master'
+
+dir_path>git merge feature/results"
+Auto-merging main.cpp
+CONFLICT (content): Merge conflict in main.cpp
+Automatic merge failed; fix conflicts and then commit the result.
+
+dir_path>git merge feature/results"git status
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+dir_path>git add *
+
+dir_path>git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        new file:   answer.txt
+        modified:   main.cpp
+        new file:   main.exe
+
+
+dir_path>git commit -m "merge with results branch"
+[master 00ef9b5] merge with results branch
+
+dir_path>git log --all --decorate  --graph
+*   commit 00ef9b5f3b1703779314f92f2a8c82932de66a5c (HEAD -> master)
+|\  Merge: 579a218 d651f68
+| | Author: tdjey <shfartem@mail.ru>
+| | Date:   Thu Sep 15 12:18:16 2022 +0300
+| |
+| |     merge with results branch
+| |
+| * commit d651f68509d4312ba555d706e4c8458c4651b1ad (feature/results)
+| | Author: tdjey <shfartem@mail.ru>
+| | Date:   Thu Sep 15 12:16:06 2022 +0300
+| |
+| |     variations added
+| |
+| * commit 7c9910dca3f375102a9abc11a4013c0050cfd43f
+| | Author: tdjey <shfartem@mail.ru>
+| | Date:   Thu Sep 15 11:33:45 2022 +0300
+| |
+| |     print function added
+| |
+* | commit 579a218ee8ccea65d8559659523196518d7e9cf7 (feature/inputfile)
+|/  Author: tdjey <shfartem@mail.ru>
+|   Date:   Thu Sep 15 12:07:58 2022 +0300
+|
+|       questions file added and main.cpp updated
+|
+* commit 2cfc839a17e5c14b16b7f037b7282d49b403fa70
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 01:50:52 2022 +0300
+|
+
+dir_path>git branch -d feature/inputfile
+Deleted branch feature/inputfile (was 579a218).
+
+dir_path>git branch
+  feature/results
+* master
+
+dir_path>git log --all --decorate  --graph
+*   commit 00ef9b5f3b1703779314f92f2a8c82932de66a5c (HEAD -> master)
+|\  Merge: 579a218 d651f68
+| | Author: tdjey <shfartem@mail.ru>
+| | Date:   Thu Sep 15 12:18:16 2022 +0300
+| |
+| |     merge with results branch
+| |
+| * commit d651f68509d4312ba555d706e4c8458c4651b1ad (feature/results)
+| | Author: tdjey <shfartem@mail.ru>
+| | Date:   Thu Sep 15 12:16:06 2022 +0300
+| |
+| |     variations added
+| |
+| * commit 7c9910dca3f375102a9abc11a4013c0050cfd43f
+| | Author: tdjey <shfartem@mail.ru>
+| | Date:   Thu Sep 15 11:33:45 2022 +0300
+| |
+| |     print function added
+| |
+* | commit 579a218ee8ccea65d8559659523196518d7e9cf7
+|/  Author: tdjey <shfartem@mail.ru>
+|   Date:   Thu Sep 15 12:07:58 2022 +0300
+|
+|       questions file added and main.cpp updated
+|
+* commit 2cfc839a17e5c14b16b7f037b7282d49b403fa70
+| Author: tdjey <shfartem@mail.ru>
+| Date:   Thu Sep 15 01:50:52 2022 +0300
+|

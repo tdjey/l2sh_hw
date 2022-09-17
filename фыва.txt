@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <map>
 
 using namespace std;
 
@@ -12,38 +11,24 @@ void print_results() {
     questions_input.open("questions.txt");
     string question, answer;
     cout << "/ username /";
-    map<string, int> answers_map;
-    int question_counter = 0;
     while (!questions_input.eof()) {
         getline(questions_input, question);
         cout << "/ " + question + " /";
-        question_counter++;
     }
-    question_counter++;
     cout << "\n";
-    int counter = 0;
     while (!input.eof()) {
-        getline(input, user_info, '~');
-        if (user_info == "\n" || user_info == "")
+        getline(input, user_info);
+        if (user_info == "")
             continue;
         cout << "/ ";
-        cout << user_info;
-        cout << " /";
-        counter++;
-        if (counter % question_counter == 0) 
-            answers_map[user_info] += 1;
-    }
-    cout << "\n";
-    int max_ans = 0;
-    string ans;
-    for (auto cur : answers_map) 
-        if (cur.second > max_ans) {
-            ans = cur.first;
-            max_ans = cur.second;
+        for (char i : user_info) {
+            if (i == '~')
+                cout << " // ";
+            else
+                cout << i;
         }
-
-    cout << "------Final statistics:------\nAmount of respondents: " << counter / question_counter <<
-        "\nThe most popular answer on last question is: " << ans;
+        cout << " /\n";
+    }
     input.close();
 }
 
@@ -64,7 +49,7 @@ int main() {
         cout << "Enter your name and surname, please\n";
         cin >> name >> surname;
         output.open("answers.txt", fstream::app);
-        output << name << " " << surname << "~";
+        output << name << " " << surname;
         getline(cin, answer);
         while (!input.eof()) {
             getline(input, question);
@@ -73,7 +58,7 @@ int main() {
             else {
                 cout << question << "\n";
                 getline(cin, answer);
-                output << answer << "~";
+                output << "~ " << answer;
             }
         }
         output << "\n";
