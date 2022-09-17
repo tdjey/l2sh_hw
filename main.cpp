@@ -7,9 +7,27 @@ void print_results() {
     ifstream input;
     input.open("answers.txt");
     string user_info;
+    ifstream questions_input;
+    questions_input.open("questions.txt");
+    string question, answer;
+    cout << "/ username /";
+    while (!questions_input.eof()) {
+        getline(questions_input, question);
+        cout << "/ " + question + " /";
+    }
+    cout << "\n";
     while (!input.eof()) {
         getline(input, user_info);
-        cout << user_info << "\n";
+        if (user_info == "")
+            continue;
+        cout << "/ ";
+        for (char i : user_info) {
+            if (i == '~')
+                cout << " // ";
+            else
+                cout << i;
+        }
+        cout << " /\n";
     }
     input.close();
 }
@@ -30,7 +48,7 @@ int main() {
         string name, surname;
         cout << "Enter your name and surname, please\n";
         cin >> name >> surname;
-        output.open("answer.txt", fstream::app);
+        output.open("answers.txt", fstream::app);
         output << name << " " << surname;
         getline(cin, answer);
         while (!input.eof()) {
@@ -40,7 +58,7 @@ int main() {
             else {
                 cout << question << "\n";
                 getline(cin, answer);
-                output << ", " << answer;
+                output << "~ " << answer;
             }
         }
         output << "\n";
