@@ -1,115 +1,10 @@
-//#include <iostream>
-//#include <cmath>
-//#include <iomanip>
-//#include <vector>
-//
-//using namespace std;
-//
-//typedef long double ld;
-//
-//struct Point {
-//    int x, y;
-//};
-//
-//istream& operator >>(istream& input, Point& p) {
-//    input >> p.x >> p.y;
-//    return input;
-//}
-//
-//struct Vector {
-//    int x, y;
-//    Vector() {}
-//    Vector(Point a, Point b) {
-//        x = b.x - a.x;
-//        y = b.y - a.y;
-//    }
-//    Vector(Point a) {
-//        x = a.x;
-//        y = a.y;
-//    }
-//    Vector(int x_, int y_) : x(x_), y(y_) {}
-//};
-//
-//int operator* (Vector& a, Vector& b) {
-//    return a.x * b.x + a.y * b.y;
-//}
-//
-//int operator% (Vector& a, Vector& b) {
-//    return a.x * b.y - a.y * b.x;
-//}
-//
-//Vector make_orto(Vector& a) {
-//    Vector ans;
-//    if (a.x == 0)
-//        ans.x = a.y * -1;
-//    else if (a.y == 0)
-//        ans.y = a.x * -1;
-//    else {
-//        ans.x = a.y * -1;
-//        ans.y = a.x;
-//    }
-//    return ans;
-//}
-//
-//pair<ld, ld> line_intersec(int a1, int b1, int c1, int a2, int b2, int c2) {
-//    ld x = (ld)(b1 * c2 - b2 * c1) / (ld)(a1 * b2 - a2 * b1),
-//        y = (ld)(a2 * c1 - a1 * c2) / (ld)(a1 * b2 - a2 * b1);
-//    return { x, y };
-//}
-//
-//
-//bool is_in_poly(Point a, vector<Point>& poly) {
-//    int ans = 0;
-//    for (int i = 0; i < poly.size() - 1; i++) {
-//        Point b = poly[i], c = poly[i + 1];        
-//        if (b.y < c.y)
-//            swap(b, c);
-//        Vector first(b, c), first_(c, a),
-//            second(c, b), second_(b, a);
-//        int ans1 = first % first_, ans2 = second % second_;
-//        if (a.x == poly[i].x && a.y == poly[i].y)
-//            return true;
-//        if (first * first_ < 0 && second * second_ < 0 &&
-//            ans1 == 0)
-//            return true;
-//        if (ans1 < 0 && ans2 > 0 &&
-//            b.y >= a.y && c.y < a.y)
-//            ans++;
-//    }
-//    Point b = poly.back(), c = poly[0];
-//    if (a.x == poly.back().x && a.y == poly.back().y)
-//        return true;
-//    if (b.y < c.y)
-//        swap(b, c);
-//    Vector first(b, c), first_(c, a),
-//        second(c, b), second_(b, a);
-//    int ans1 = first % first_, ans2 = second % second_;
-//    if (ans1 < 0 && ans2 > 0 &&
-//        b.y >= a.y && c.y < a.y)
-//        ans++;
-//    if (ans & 1)
-//        return true;
-//    return false;
-//}
-//
-//int main() {
-//    int n;
-//    Point a;
-//    cin >> n >> a;
-//    vector<Point> poly(n);
-//    for (int i = 0; i < n; i++) 
-//        cin >> poly[i];
-//    if (is_in_poly(a, poly))
-//        cout << "YES";
-//    else
-//        cout << "NO";
-//}
 #define _CRT_SECURE_NO_WARNINGS
 #include <vector>
 #include <iostream>
 #include <fstream>
 #include <map>
 #include <string>
+
 
 using namespace std;
 
@@ -128,8 +23,9 @@ void print_results(int width) {
         question_counter++;
         questions.push_back(question);
     }
-    cout << "\n";
+    map<string, int> answers_map;
     question_counter++;
+    cout << "\n";
     int column_width = width / question_counter;
     for (string s : questions) {
         if (s.size() <= column_width) {
@@ -147,9 +43,11 @@ void print_results(int width) {
     cout << "\n";
     int shift_counter = 0;
     while (!input.eof()) {
+        getline(input, user_info, '~');
         if (shift_counter % questions.size() == 0)
             cout << "\n";
-        getline(input, user_info, '~');
+        if ((shift_counter + 1) % question_counter == 0) 
+            answers_map[user_info] += 1;
         if (user_info == "\n" || user_info == "")
             continue;
         if (user_info.size() <= column_width) {
@@ -166,6 +64,16 @@ void print_results(int width) {
         shift_counter++;
     }
     cout << "\n";
+    int max_ans = 0;
+    string ans;
+    for (auto cur : answers_map) 
+        if (cur.second > max_ans) {
+            ans = cur.first;
+            max_ans = cur.second;
+        }
+
+    cout << "------Final statistics:------\nAmount of respondents: " << shift_counter / question_counter <<
+        "\nThe most popular answer on last question is: " << ans;
     input.close();
 }
 
