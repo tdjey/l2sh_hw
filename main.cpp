@@ -133,15 +133,31 @@ int main() {
             newQustions.open("newQustions.txt", ios_base::app);
 
             string questionLine, conf;
+            bool isFirstLine = true;
+            bool deletingAllQuestions = true;
+
             getline(cin, _);
             while (getline(q, questionLine))
             {
                 cout << questionLine << "\n";
                 cout << "Would you like to delete this question?('n' to pass, 'y' to delete)\n";
                 while (conf != "n" && conf != "y") { cin >> conf; }
-                if (conf == "n") { newQustions << questionLine << "\n"; }
+                if (conf == "n")
+                {
+                    if (isFirstLine) { newQustions << questionLine; isFirstLine = false; }
+                    else { newQustions << "\n" << questionLine; }
+                    deletingAllQuestions = false;
+                }
                 conf = "";
             }
+
+            if (deletingAllQuestions)
+            {
+                newQustions << questionLine;
+                isFirstLine = false;
+                cout << "You cant have 0 questions! Add more first to delete this one\n";
+            }
+
             newQustions.close();
             q.close();
             remove("questions.txt");
@@ -157,13 +173,15 @@ int main() {
             {
                 cout << "Input a new question or '/stop' to stop adding questions\n";
                 getline(cin, newQuestion);
-                if (newQuestion != "/stop") { q << newQuestion << "\n"; }
+                if (newQuestion != "/stop") { q << "\n" << newQuestion; }
             }
             q.close();
         }
 
-        remove("answers.txt");
-        cout << "old answers.txt was deleted\n";
+        ofstream ans;
+        ans.open("answers.txt", ofstream::out | ofstream::trunc);
+        ans.close();
 
+        cout << "answers.txt was cleared\n";
     }
 }
