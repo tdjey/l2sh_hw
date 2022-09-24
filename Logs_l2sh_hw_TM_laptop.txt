@@ -1,0 +1,116 @@
+C:\GitHub\l2sh_hw>git log --all
+commit 760043a911e7cc841cdb1a10a125c53fee91f6e8 (HEAD -> master, origin/master, origin/HEAD, addQuestionsMode)
+Author: Timmm005 <66874161+Timmm005@users.noreply.github.com>
+Date:   Thu Sep 22 12:47:46 2022 +0300
+
+    added the ability to modify questions
+
+commit 6449d439792131d6efb33c9205e8373d883ef37f
+Merge: 2b4dbf0 134eba4
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 22 10:38:42 2022 +0300
+
+    merge conflict solved
+
+commit 2b4dbf0cfa001d1acce9fdd16d156833a6a7278d
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 22 00:10:03 2022 +0300
+
+    pring formatting added
+
+commit 134eba483c0969d427c8df2ac986c3cba1a6487a
+Author: tdjey <shfartem@mail.ru>
+Date:   Sat Sep 17 14:25:01 2022 +0300
+
+    statistics added
+
+commit b150fd6fea90bbd4aa787d7acffa4efc5eabd0cb
+Author: tdjey <shfartem@mail.ru>
+Date:   Sat Sep 17 13:31:28 2022 +0300
+
+:...skipping...
+commit 760043a911e7cc841cdb1a10a125c53fee91f6e8 (HEAD -> master, origin/master, origin/HEAD, addQuestionsMode)
+Author: Timmm005 <66874161+Timmm005@users.noreply.github.com>
+Date:   Thu Sep 22 12:47:46 2022 +0300
+
+    added the ability to modify questions
+
+commit 6449d439792131d6efb33c9205e8373d883ef37f
+Merge: 2b4dbf0 134eba4
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 22 10:38:42 2022 +0300
+
+    merge conflict solved
+
+commit 2b4dbf0cfa001d1acce9fdd16d156833a6a7278d
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 22 00:10:03 2022 +0300
+
+    pring formatting added
+
+commit 134eba483c0969d427c8df2ac986c3cba1a6487a
+Author: tdjey <shfartem@mail.ru>
+Date:   Sat Sep 17 14:25:01 2022 +0300
+
+    statistics added
+
+commit b150fd6fea90bbd4aa787d7acffa4efc5eabd0cb
+Author: tdjey <shfartem@mail.ru>
+Date:   Sat Sep 17 13:31:28 2022 +0300
+
+    table print added
+
+commit 00ef9b5f3b1703779314f92f2a8c82932de66a5c
+Merge: 579a218 d651f68
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 12:18:16 2022 +0300
+
+    merge with results branch
+
+commit d651f68509d4312ba555d706e4c8458c4651b1ad
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 12:16:06 2022 +0300
+
+    variations added
+
+commit 579a218ee8ccea65d8559659523196518d7e9cf7
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 12:07:58 2022 +0300
+
+    questions file added and main.cpp updated
+
+commit 7c9910dca3f375102a9abc11a4013c0050cfd43f
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 11:33:45 2022 +0300
+
+    print function added
+
+commit 2cfc839a17e5c14b16b7f037b7282d49b403fa70
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 01:50:52 2022 +0300
+
+    .gitignore added
+
+commit 512095f0c0b5c56504879ca90c1ee4b82c012093
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 01:49:55 2022 +0300
+
+    readme fixed
+
+commit 0edcdd92a962acff25f0a7fac51e1d8cf7783791
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 01:49:03 2022 +0300
+
+    film is replaced by book
+
+commit 3220cce07d88bc52e0f7ce52cc19145071e101fa
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 01:40:46 2022 +0300
+
+    readme added
+
+commit fb18aee012697670e80b9cae698fe7ace877c34a
+Author: tdjey <shfartem@mail.ru>
+Date:   Thu Sep 15 01:25:11 2022 +0300
+
+    main.cpp added
